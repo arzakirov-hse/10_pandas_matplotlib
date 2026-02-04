@@ -2,16 +2,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import json
 
 # Загрузка данных
-data = {
-    "events": [
-        {
-            "timestamp": "2023-08-21T08:00:00",
-            "signature": "MALWARE-CNC Win.Trojan.Jadtre variant outbound connection"
-        }
-    ]
-}
+with open("events.json", "r") as file:
+    data = json.load(file)
 
 # Преобразование в DataFrame
 df = pd.DataFrame(data["events"])
